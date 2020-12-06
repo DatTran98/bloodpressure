@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">BloodPressure</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment_1">Hello fragment 1</string>
+    <string name="hello_blank_fragment_2">Hello fragment 2</string>
+    <string name="title_activity_main">MainActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next - Đăng ký</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Welcome to manager</string>
+    <string name="move_list_user">Danh sách bệnh nhân</string>
+    <string name="move_list_room">Quản lý phòng bệnh</string>
+    <string name="move_list_news">Bản tin</string>
+    <string name="menu">Menu</string>
+    <string name="move_list_static">Thống kê</string>
+    <string-array name="Planets">
+        <item>Sun</item>
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
+</resources>
