@@ -1,33 +1,46 @@
 <resources>
-    <string name="app_name">BloodPressure</string>
+    <string name="app_name">Blood Presssure</string>
+    <string name="click_for_register">Click để đăng ký</string>
+    <string name="swipe_right_for_login">Click để đăng nhập</string>
+    <string name="login">Đăng nhập</string>
+    <string name="register">Đăng ký</string>
+    <string name="tag">Let\'s start to take care of the health</string>
+    <string name="password">Mật khẩu</string>
+    <string name="username">Tên đăng nhập</string>
+    <string name="age">Tuổi</string>
+    <string name="full_name">Họ tên</string>
+    <string name="tel">Số điện thoại</string>
+    <string name="disease_name">Bệnh</string>
+    <string name="room">Phòng</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome!"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment_1">Hello fragment 1</string>
-    <string name="hello_blank_fragment_2">Hello fragment 2</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main">BloodPressure</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next - Đăng ký</string>
+    <string name="next">Next</string>
     <string name="previous">Previous</string>
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Welcome to manager</string>
     <string name="move_list_user">Danh sách bệnh nhân</string>
     <string name="move_list_room">Quản lý phòng bệnh</string>
     <string name="move_list_news">Bản tin</string>
     <string name="menu">Menu</string>
     <string name="move_list_static">Thống kê</string>
-    <string-array name="Planets">
-        <item>Sun</item>
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
-    </string-array>
+    <string name="title_activity_news">Bản tin</string>
+    <string name="title_activity_rooms">Danh sách phòng</string>
+    <string name="edit_user">Chỉnh sửa thông tin bệnh nhân</string>
+    <string name="btn_save">Lưu</string>
+    <string name="room_id">Mã Phòng</string>
+    <!-- TODO: Remove or change this placeholder text -->
 </resources>
