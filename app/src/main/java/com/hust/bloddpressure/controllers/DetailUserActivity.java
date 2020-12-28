@@ -1,24 +1,30 @@
 package com.hust.bloddpressure.controllers;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import com.hust.bloddpressure.R;
+import com.hust.bloddpressure.model.entities.InforStaticClass;
 import com.hust.bloddpressure.util.Common;
 import com.hust.bloddpressure.util.Constant;
 
 public class DetailUserActivity extends AppCompatActivity {
     TextView textViewIdUser, textViewUsername, textViewFullName, textViewAge, textViewDisease, textViewTel, textViewRoom, textViewMessage;
     private int tabMode;
+    Button btnMoveRoom, btnEdit, btnHis, btnBasic;
+    String userId;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,25 +32,35 @@ public class DetailUserActivity extends AppCompatActivity {
         getIdElementView();
         // Phải lấy ra id được truyền từ màn hình list từ intent
         Bundle bundle = getIntent().getExtras();
-        if (bundle == null) {
-            // PHẢI HIỆN THỊ ĐÚNG THÔNG BÁO
-            textViewMessage.setText("Không có dữ liệu");
+        int rule = InforStaticClass.getRule();
+        // Lấy ra giá trị userId được truyền từ list user
+        if (Constant.USER_RULE == rule) {
+            userId = InforStaticClass.getUserId();
         } else {
-            // Lấy ra giá trị userId được truyền từ list user
-            int userId = bundle.getInt("userId");
-            // Set id lên view chính để 2 tab basic và history sử dụng
-            textViewIdUser.setText(userId + "");
-            textViewMessage.setText("Thông tin bệnh nhân");
-            TabBasicDetailUserFragment tabBasicDetailUserFragment = new TabBasicDetailUserFragment();
-            // Gửi bundle chứ id này qua fragment( không cần thiết vi đã set view)
-            tabBasicDetailUserFragment.setArguments(bundle);
-            // Set fragment cho view, frame cần hiển thị fragment
-            setFragmentByManagerFragment(R.id.content_detail, tabBasicDetailUserFragment);
-            // Set mode tab
-            tabMode = Constant.MODE_BASIC;
+            if (bundle == null) {
+                // PHẢI HIỆN THỊ ĐÚNG THÔNG BÁO
+                textViewMessage.setText(R.string.no_data);
+            } else {
+                userId = bundle.getString(Constant.USER_ID);
+            }
+        }
+        // Set id lên view chính để 2 tab basic và history sử dụng
+        textViewIdUser.setText(userId);
+        Bundle bundle1 = getIdUserMain();
+        TabBasicDetailUserFragment tabBasicDetailUserFragment = new TabBasicDetailUserFragment();
+        // Gửi bundle chứ id này qua fragment( không cần thiết vi đã set view)
+        tabBasicDetailUserFragment.setArguments(bundle1);
+        // Set fragment cho view, frame cần hiển thị fragment
+        setFragmentByManagerFragment(R.id.content_detail, tabBasicDetailUserFragment);
+        // Set mode tab
+        tabMode = Constant.MODE_BASIC;
+        // Set disible button khi là user không có quyên edit
+        if (rule == Constant.USER_RULE) {
+            btnEdit.setVisibility(View.INVISIBLE);
+            btnMoveRoom.setVisibility(View.INVISIBLE);
         }
 
-        findViewById(R.id.btn_history_pressure).setOnClickListener(new View.OnClickListener() {
+        btnHis.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -57,7 +73,7 @@ public class DetailUserActivity extends AppCompatActivity {
 
             }
         });
-        findViewById(R.id.btn_basic_detail).setOnClickListener(new View.OnClickListener() {
+        btnBasic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // truyền dữ liệu là id user
@@ -68,32 +84,23 @@ public class DetailUserActivity extends AppCompatActivity {
                 tabMode = Constant.MODE_BASIC;
             }
         });
-        findViewById(R.id.btn_edit_user).setOnClickListener(new View.OnClickListener() {
+        btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (tabMode == Constant.MODE_BASIC) {
-                    // Lấy id để truyền qua activity, thực hiện get thông tin user tại acitvity
-                    Intent intent = new Intent(DetailUserActivity.this, EditUserActivity.class);
-                    // Tìm id của các view trong viewgroup
-                    getIdElementView();
-                    Bundle bundle = new Bundle();
-                // Thực hiện get giá trị và truyền vào bundle
-                    setValuesForBundle(bundle);
-                // Put bundle vào intent để truyền sang activity khác
-                    intent.putExtras(bundle);
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(DetailUserActivity.this, "Chuyển qua tab thông tin để chỉnh sửa", Toast.LENGTH_SHORT).show();
-                }
+                // Lấy id để truyền qua activity, thực hiện get thông tin user tại acitvity
+                Intent intent = new Intent(DetailUserActivity.this, EditUserActivity.class);
+                Bundle bundle = getIdUserMain();
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
-        findViewById(R.id.btn_move_to_another_room).setOnClickListener(new View.OnClickListener() {
+        btnMoveRoom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // truyền dữ liệu là id user
                 Intent intent = new Intent(DetailUserActivity.this, MoveToAnotherRoom.class);
-                int userId = Common.convertToInt(textViewIdUser.getText().toString(), 0);
-                intent.putExtra("userId", userId);
+                Bundle bundle = getIdUserMain();
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });
@@ -107,7 +114,7 @@ public class DetailUserActivity extends AppCompatActivity {
     private Bundle getIdUserMain() {
         Bundle bundle = new Bundle();
         textViewIdUser = findViewById(R.id.user_id_main);
-        bundle.putInt("userId", Common.convertToInt(textViewIdUser.getText().toString(), 0));
+        bundle.putString(Constant.USER_ID, textViewIdUser.getText().toString());
         return bundle;
     }
 
@@ -126,7 +133,8 @@ public class DetailUserActivity extends AppCompatActivity {
      * Tìm id view trong layout viewgroup
      */
     private void getIdElementView() {
-
+        btnHis = findViewById(R.id.btn_history_pressure);
+        btnBasic = findViewById(R.id.btn_basic_detail);
         textViewMessage = findViewById(R.id.message);
         textViewIdUser = findViewById(R.id.user_id_main);
         textViewUsername = findViewById(R.id.username);
@@ -135,6 +143,8 @@ public class DetailUserActivity extends AppCompatActivity {
         textViewDisease = findViewById(R.id.disease);
         textViewTel = findViewById(R.id.tel);
         textViewRoom = findViewById(R.id.room);
+        btnEdit = findViewById(R.id.btn_edit_user);
+        btnMoveRoom = findViewById(R.id.btn_move_to_another_room);
     }
 
     /**

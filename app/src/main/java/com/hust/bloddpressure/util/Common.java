@@ -42,7 +42,7 @@ public class Common {
      * Mã hóa password theo SHA-1
      *
      * @param salt chuỗi được tạo ngẫu nhiên
-     * @param pass mật khẩu chưa mã hóa
+     * @param password mật khẩu chưa mã hóa
      * @return trả về mật khẩu đã được mã hóa theo SHA-1
      */
     public static String encrypt(String password, String salt) {
@@ -209,7 +209,7 @@ public class Common {
         } else if (Common.checkEmpty(password)) {
             error += " Chưa nhập password";
         } else if (checkLength(username, Constant.MIN_LENGTH, Constant.MAX_LENGTH)) {
-            error += "Chú ý " + Constant.MIN_LENGTH + " < Tên đăng nhập < " + Constant.MAX_LENGTH;
+            error += "Chú ý " + Constant.USER_MIN_LENGTH + " < Tên đăng nhập < " + Constant.MAX_LENGTH;
         } else if (checkLength(password, Constant.MIN_LENGTH, Constant.MAX_LENGTH))
             error += "Chú ý " + Constant.MIN_LENGTH + " < Mật Khẩu < " + Constant.MAX_LENGTH;
         return error;
@@ -244,7 +244,7 @@ public class Common {
                 noteError += "Hãy nhập họ tên";
             } else if (userInfor.getAge() <= 0) {
                 noteError += "Hãy nhập tuổi";
-            } else if (checkEmpty(userInfor.getDiseasename())) {
+            } else if (checkEmpty(userInfor.getDiseaseName())) {
                 noteError += "Hãy nhập tên bệnh";
             } else if (checkEmpty(userInfor.getTel())) {
                 noteError += "Hãy nhập số điện thoại";
@@ -254,7 +254,7 @@ public class Common {
                 noteError += "Chú ý " + Constant.MIN_LENGTH + " < Độ dài Họ tên < " + Constant.MAX_LENGTH;
             } else if (checkMinAge(userInfor.getAge(), Constant.MIN_AGE)) {
                 noteError += "Chú ý " + "Tuổi phải > " + Constant.MIN_AGE;
-            } else if (checkLength(userInfor.getDiseasename(), Constant.MIN_LENGTH, Constant.MAX_LENGTH)) {
+            } else if (checkLength(userInfor.getDiseaseName(), Constant.MIN_LENGTH, Constant.MAX_LENGTH)) {
                 noteError += "Chú ý " + Constant.MIN_LENGTH + " < Độ dài Tên bệnh < " + Constant.MAX_LENGTH;
             }
             // check room?
@@ -267,7 +267,7 @@ public class Common {
                 noteError += "Hãy nhập mật khẩu";
             } else if (userInfor.getAge() <= 0) {
                 noteError += "Hãy nhập tuổi";
-            } else if (checkEmpty(userInfor.getDiseasename())) {
+            } else if (checkEmpty(userInfor.getDiseaseName())) {
                 noteError += "Hãy nhập tên bệnh";
             } else if (checkEmpty(userInfor.getTel())) {
                 noteError += "Hãy nhập số điện thoại";
@@ -281,7 +281,7 @@ public class Common {
                 noteError += "Chú ý " + Constant.MIN_LENGTH + " < Độ dài Mật khấu < " + Constant.MAX_LENGTH;
             } else if (checkMinAge(userInfor.getAge(), Constant.MIN_AGE)) {
                 noteError += "Chú ý " + "Tuổi phải > " + Constant.MIN_AGE;
-            } else if (checkLength(userInfor.getDiseasename(), Constant.MIN_LENGTH, Constant.MAX_LENGTH)) {
+            } else if (checkLength(userInfor.getDiseaseName(), Constant.MIN_LENGTH, Constant.MAX_LENGTH)) {
                 noteError += "Chú ý " + Constant.MIN_LENGTH + " < Độ dài Tên bệnh < " + Constant.MAX_LENGTH;
             }
         }

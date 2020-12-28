@@ -41,7 +41,7 @@ public class ListViewNewsAdapter extends BaseAdapter {
         News news = (News) getItem(i);
         ((TextView) newView.findViewById(R.id.news_id)).setText(String.format("Mã bản tin: %d", news.getNewId()));
         ((TextView) newView.findViewById(R.id.title_news)).setText(String.format("%s", news.getTitleNew()));
-        ((TextView) newView.findViewById(R.id.content_news)).setText(String.format("Nội dung cần nắm bắt: %s", news.getContentNew()));
+        ((TextView) newView.findViewById(R.id.content_news)).setText(String.format("Nội dung: %s", news.getContentNew()));
         return newView;
     }
 }

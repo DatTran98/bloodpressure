@@ -42,8 +42,8 @@ public class ListViewRoomAdapter extends BaseAdapter {
         } else newView = view;
         Room room = (Room) getItem(i);
 
-        ((TextView) newView.findViewById(R.id.room_id)).setText(String.format("Mã phòng: %d", room.getRoomId()));
-        ((TextView) newView.findViewById(R.id.room_name)).setText(String.format("Tên phòng: %s", room.getRoomName()));
+        ((TextView) newView.findViewById(R.id.room_id)).setText(String.format("Mã phòng\n %d", room.getRoomId()));
+        ((TextView) newView.findViewById(R.id.room_name)).setText(String.format("Tên phòng\n %s", room.getRoomName()));
         return newView;
     }
 }

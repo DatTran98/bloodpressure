@@ -15,29 +15,35 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="5dp"
+            android:contentDescription="@string/todo"
+            android:fontFamily="@font/roboto_regular"
             android:src="@mipmap/blood_pressure_icon_vector" />
 
         <TextView
             android:id="@android:id/empty"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:gravity="center"
-            android:layout_toRightOf="@id/img_view"
             android:layout_marginTop="5dp"
-            android:text="Danh sách người bệnh"
-            android:textSize="25dp"
-            android:textStyle="bold"
-            android:background="#26a69a"/>
+            android:layout_toEndOf="@id/img_view"
+            android:layout_toRightOf="@id/img_view"
+            android:background="#26a69a"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center"
+            android:text="@string/list_user_title"
+            android:textSize="25sp"
+            android:textStyle="bold" />
     </RelativeLayout>
+
     <TextView
         android:id="@android:id/empty"
         android:layout_width="match_parent"
         android:layout_height="20dp"
         android:layout_marginTop="5dp"
+        android:fontFamily="@font/roboto_regular"
         android:gravity="center"
-        android:text="Ấn giữ để xóa người dùng!"
-        android:textSize="15dp"
-        />
+        android:text="@string/mesage_delete_user"
+        android:textSize="15sp" />
+
     <ListView
         android:id="@+id/list_users"
         android:layout_width="match_parent"

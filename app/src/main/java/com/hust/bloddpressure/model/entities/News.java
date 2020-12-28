@@ -3,6 +3,17 @@ package com.hust.bloddpressure.model.entities;
 public class News {
     private int newId;
     private String contentNew;
+    private String titleNew;
+
+    public News(int newId, String titleNew, String contentNew) {
+        this.newId = newId;
+        this.titleNew = titleNew;
+        this.contentNew = contentNew;
+    }
+    public News( String titleNew, String contentNew) {
+        this.titleNew = titleNew;
+        this.contentNew = contentNew;
+    }
 
     public String getTitleNew() {
         return titleNew;
@@ -11,8 +22,6 @@ public class News {
     public void setTitleNew(String titleNew) {
         this.titleNew = titleNew;
     }
-
-    private String titleNew;
 
     public int getNewId() {
         return newId;

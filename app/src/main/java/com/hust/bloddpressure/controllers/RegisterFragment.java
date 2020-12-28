@@ -157,7 +157,7 @@ public class RegisterFragment extends Fragment {
         userInfor.setUsername(username);
         userInfor.setPassword(password);
         userInfor.setAge(age);
-        userInfor.setDiseasename(disease);
+        userInfor.setDiseaseName(disease);
         userInfor.setTel(tel);
         userInfor.setRoomId(roomId);
         userInfor.setRoom(room);

@@ -110,7 +110,7 @@ public class EditUserActivity extends AppCompatActivity {
         // Set gia trị cho user
         userInfor.setFullname(fullName);
         userInfor.setAge(age);
-        userInfor.setDiseasename(disease);
+        userInfor.setDiseaseName(disease);
         userInfor.setTel(tel);
 
         return userInfor;

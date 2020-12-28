@@ -20,13 +20,13 @@ import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.hust.bloddpressure.R;
+import com.hust.bloddpressure.model.entities.InforStaticClass;
 import com.hust.bloddpressure.util.Constant;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class AnalysisActivity extends AppCompatActivity implements OnChartValueSelectedListener {
-    private CombinedChart maxChart, minChart;
 
 
     @Override
@@ -37,12 +37,18 @@ public class AnalysisActivity extends AppCompatActivity implements OnChartValueS
     }
 
     private void initView() {
-        initViewMaxChart();
-        initViewMinChart();
+        int rule = InforStaticClass.getRule();
+        String userId = InforStaticClass.getUserId();
+        if (Constant.USER_RULE == rule) {
+
+            initViewMaxChart();
+            initViewMinChart();
+        }
+
     }
 
     private void initViewMinChart() {
-        minChart = (CombinedChart) findViewById(R.id.combined_chart_min);
+        CombinedChart minChart = findViewById(R.id.combined_chart_min);
         minChart.getDescription().setEnabled(false);
         minChart.setBackgroundColor(Color.WHITE);
         minChart.setDrawGridBackground(true);
@@ -93,7 +99,7 @@ public class AnalysisActivity extends AppCompatActivity implements OnChartValueS
     }
 
     private void initViewMaxChart() {
-        maxChart = (CombinedChart) findViewById(R.id.combined_chart_max);
+        CombinedChart maxChart = findViewById(R.id.combined_chart_max);
         maxChart.getDescription().setEnabled(false);
         maxChart.setBackgroundColor(Color.WHITE);
         maxChart.setDrawGridBackground(true);
@@ -147,7 +153,7 @@ public class AnalysisActivity extends AppCompatActivity implements OnChartValueS
     private DataSet dataChartMax() {
         LineData d = new LineData();
         int[] dataMax = new int[]{125, 123, 121, 110, 110, 125, 130, 119, 115, 122, 125, 120};
-        ArrayList<Entry> entriesMax = new ArrayList<Entry>();
+        ArrayList<Entry> entriesMax = new ArrayList<>();
         for (int index = 0; index < dataMax.length; index++) {
             entriesMax.add(new Entry(index, dataMax[index]));
         }
@@ -169,7 +175,7 @@ public class AnalysisActivity extends AppCompatActivity implements OnChartValueS
     private DataSet dataChartMin() {
         LineData d = new LineData();
         int[] dataMin = new int[]{60, 65, 66, 70, 75, 70, 80, 64, 71, 65, 78, 80};
-        ArrayList<Entry> entriesMin = new ArrayList<Entry>();
+        ArrayList<Entry> entriesMin = new ArrayList<>();
 
         for (int index = 0; index < dataMin.length; index++) {
             entriesMin.add(new Entry(index, dataMin[index]));

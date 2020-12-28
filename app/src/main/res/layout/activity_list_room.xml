@@ -18,41 +18,41 @@
             android:src="@mipmap/blood_pressure_icon_vector" />
 
         <TextView
-            android:id="@android:id/empty"
+            android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="5dp"
             android:layout_toRightOf="@id/img_view"
             android:background="#26a69a"
+            android:fontFamily="@font/roboto_regular"
             android:gravity="center"
             android:text="@string/title_activity_rooms"
-            android:textSize="25dp"
-            android:textStyle="bold" />
+
+            android:textSize="25dp" />
 
     </RelativeLayout>
+
     <TextView
-        android:id="@android:id/empty"
+        android:id="@+id/empty"
         android:layout_width="match_parent"
         android:layout_height="20dp"
         android:layout_marginTop="5dp"
         android:gravity="center"
         android:text="Ấn giữ để xóa phòng!"
-        android:textSize="15dp"
-        />
+        android:textSize="15dp" />
+
     <ListView
         android:id="@+id/list_rooms"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" >
-    </ListView>
+        android:layout_weight="1"></ListView>
 
     <Button
+        android:id="@+id/btn_add_room"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:id="@+id/btn_add_room"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        android:shadowRadius="5"
         android:background="@mipmap/btn_add"
-        />
+        android:shadowRadius="5" />
 </LinearLayout>

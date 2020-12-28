@@ -4,4 +4,9 @@
     <color name="colorPrimaryDark">#00695C</color>
     <color name="colorAccent">#FF4081</color>
     <color name="black_overlay">#66000000</color>
+    <color name="no_data_color">#e55039</color>
+    <color name="choose_item">#ffcccc</color>
+    <color name="white">#FAFAFA</color>
+    <color name="odd_item">#dff9fb</color>
+    <color name="even">#c7ecee</color>
 </resources>

@@ -16,6 +16,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="5dp"
+            android:contentDescription="@string/todo"
             android:src="@mipmap/blood_pressure_icon_vector" />
 
         <TextView
@@ -23,11 +24,12 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/img_view"
             android:layout_toRightOf="@id/img_view"
             android:background="#26a69a"
             android:gravity="center"
-            android:text="Thống kê dữ liệu"
-            android:textSize="25dp"
+            android:text="@string/static_title"
+            android:textSize="25sp"
             android:textStyle="bold" />
     </RelativeLayout>
 
@@ -37,8 +39,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:gravity="center"
-        android:text="Đồ thị kết quả đo gần nhất"
-        android:textSize="20dp"
+        android:text="@string/message_result"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <ScrollView
@@ -53,8 +55,7 @@
             <com.github.mikephil.charting.charts.CombinedChart
                 android:id="@+id/combined_chart_max"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
-                />
+                android:layout_height="300dp" />
 
             <com.github.mikephil.charting.charts.CombinedChart
                 android:id="@+id/combined_chart_min"

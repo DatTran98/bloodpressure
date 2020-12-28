@@ -37,6 +37,7 @@
         android:layout_height="120dp"
         android:layout_above="@id/et_username"
         android:layout_centerHorizontal="true"
+        android:contentDescription="@string/todo"
         android:src="@mipmap/blood_pressure_icon_vector" />
 
     <EditText
@@ -47,6 +48,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
+        android:autofillHints="@string/username"
         android:background="@drawable/et_custom"
         android:fontFamily="@font/roboto_regular"
         android:hint="@string/username"
@@ -62,6 +64,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
+        android:autofillHints="@string/password"
         android:background="@drawable/et_custom"
         android:fontFamily="@font/roboto_regular"
         android:hint="@string/password"
@@ -92,8 +95,8 @@
         android:layout_height="30dp"
         android:layout_above="@id/label_register"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/ic_arrow_right"
-       />
+        android:contentDescription="@string/todo"
+        android:src="@drawable/ic_arrow_right" />
 
     <TextView
         android:id="@+id/label_register"
@@ -103,9 +106,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
         android:background="#FFFFFF"
-        android:text="@string/click_for_register"
         android:fontFamily="@font/roboto_regular"
-        android:textSize="15sp"
-        />
+        android:text="@string/click_for_register"
+        android:textSize="15sp" />
 
 </RelativeLayout>

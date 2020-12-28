@@ -18,6 +18,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="5dp"
+            android:contentDescription="@string/todo"
             android:src="@mipmap/blood_pressure_icon_vector" />
 
         <TextView
@@ -25,11 +26,13 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/img_view"
             android:layout_toRightOf="@id/img_view"
             android:background="#26a69a"
+            android:fontFamily="@font/roboto_regular"
             android:gravity="center"
-            android:text="Tạo tin mới"
-            android:textSize="25dp"
+            android:text="@string/add_news_title"
+            android:textSize="25sp"
             android:textStyle="bold" />
     </RelativeLayout>
 
@@ -40,53 +43,43 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginLeft="10dp"
-                android:text="Tiêu đề "
-                android:textSize="25dp"
-                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/title_news"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_centerInParent="true"
+                android:layout_height="60dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
+                android:autofillHints="@string/news_title"
                 android:background="@drawable/et_custom"
                 android:focusable="true"
                 android:fontFamily="@font/roboto_regular"
+                android:hint="@string/news_title"
                 android:inputType="text"
+                android:maxLength="50"
                 android:padding="15dp"
-                android:textSize="15sp"
-                android:maxLength="50"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginLeft="10dp"
-                android:text="Nội dung "
-                android:textSize="25dp"
-                android:textStyle="bold" />
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/content_news"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
+                android:autofillHints="@string/news_content"
                 android:background="@drawable/et_custom"
                 android:fontFamily="@font/roboto_regular"
+                android:hint="@string/news_content"
+                android:inputType="text"
+                android:lineHeight="1sp"
+                android:maxLines="40"
                 android:padding="15dp"
-                android:textSize="15sp" />
+                android:textSize="20sp"
+                tools:ignore="LabelFor" />
 
         </LinearLayout>
 
@@ -94,12 +87,15 @@
 
     <Button
         android:id="@+id/btn_create_news"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/btn_custom"
-        android:backgroundTint="#65e0cc"
-        android:text="Tạo"
-        android:textSize="20dp" />
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/create"
+        android:textSize="20sp" />
 </LinearLayout>

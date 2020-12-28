@@ -28,7 +28,6 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="hello_blank_fragment">Welcome to manager</string>
@@ -42,5 +41,30 @@
     <string name="edit_user">Chỉnh sửa thông tin bệnh nhân</string>
     <string name="btn_save">Lưu</string>
     <string name="room_id">Mã Phòng</string>
+    <string name="room_name">Tên phòng</string>
+    <string name="create">Tạo</string>
+    <string name="title_add_room">Thêm phòng mới</string>
+    <string name="news_content">Nội dung tin</string>
+    <string name="news_title">Tiêu đề tin</string>
+    <string name="add_news_title">Tạo tin mới</string>
+    <string name="todo">TODO</string>
+    <string name="blood_pressure">Welcome to BloodPressure Manager</string>
+    <string name="static_title">Thống kê dữ liệu</string>
+    <string name="message_result">Đồ thị kết quả đo gần nhất</string>
+    <string name="detail_infor_title">Thông tin chi tiết bệnh nhân</string>
+    <string name="basic_detail">Thông tin cơ bản</string>
+    <string name="history_result">lịch sử kiểm tra</string>
+    <string name="user_id">Mã bệnh nhân</string>
+    <string name="list_user_title">Danh sách người bệnh</string>
+    <string name="mesage_delete_user">Ấn giữ để xóa người dùng!</string>
+    <string name="move_to_room_title">Chuyển phòng bệnh nhân</string>
+    <string name="choose_room">Chọn phòng mới</string>
+    <string name="max_pressure">Huyết áp tối đa</string>
+    <string name="min_pressure">Huyết áp tối thiểu</string>
+    <string name="btn_name_user_information">Thông tin người dùng</string>
+    <string name="title_user_menu">Welcome to BloodPressure User</string>
+    <string name="label_room_user">Danh sách phòng bệnh</string>
+    <string name="no_data">Không có dữ liệu</string>
+    <string name="history_detail">Thông tin lịch sử đo</string>
     <!-- TODO: Remove or change this placeholder text -->
 </resources>

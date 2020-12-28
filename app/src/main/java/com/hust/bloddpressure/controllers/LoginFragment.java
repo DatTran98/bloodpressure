@@ -1,12 +1,6 @@
 package com.hust.bloddpressure.controllers;
 
 
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,10 +9,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.hust.bloddpressure.R;
+import com.hust.bloddpressure.model.entities.InforStaticClass;
 import com.hust.bloddpressure.util.Common;
+import com.hust.bloddpressure.util.Constant;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -50,6 +50,8 @@ public class LoginFragment extends Fragment {
                 String password = editTextPassword.getText().toString().trim();
                 String error = Common.validateLogin(userName, password);
                 if (error.isEmpty()) {
+                    InforStaticClass.setUserId(10 + "");
+                    InforStaticClass.setRule(Constant.ADMIN_RULE);
                     Intent intent = new Intent(getActivity(), MenuManagerActivity.class);
                     startActivity(intent);
 //                    try {
@@ -88,9 +90,9 @@ public class LoginFragment extends Fragment {
     }
 
     private void findViewByIdForView(View view) {
-        editTextUserName = (EditText) view.findViewById(R.id.et_username);
-        editTextPassword = (EditText) view.findViewById(R.id.et_password);
-        btnLogin = (Button) view.findViewById(R.id.btn_login);
+        editTextUserName = view.findViewById(R.id.et_username);
+        editTextPassword = view.findViewById(R.id.et_password);
+        btnLogin = view.findViewById(R.id.btn_login);
         btnSwitchRegister = view.findViewById(R.id.btn_do_register);
     }
 

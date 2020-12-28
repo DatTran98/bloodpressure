@@ -156,13 +156,13 @@ public class TblUserImpl extends BaseImpl implements TblUserInter {
 					// khởi tạo mộit user để chứa giá trị
 					userInfor = new UserInfor();
 					// Lấy các giá trị và set các giá trị cho userinfor
-					userInfor.setUserId(rs.getInt("userid"));
+					userInfor.setUserId(rs.getString("userid"));
 					userInfor.setAge(rs.getInt("age"));
 					userInfor.setRoomId(rs.getInt("roomid"));
 					userInfor.setRule(rs.getInt("rule"));
 					userInfor.setFullname(rs.getString("fullname"));
 					userInfor.setRoom(rs.getString("roomname"));
-					userInfor.setDiseasename(rs.getString("diseasename"));
+					userInfor.setDiseaseName(rs.getString("diseasename"));
 					userInfor.setTel(rs.getString("tel"));
 				}
 			}
@@ -230,13 +230,13 @@ public class TblUserImpl extends BaseImpl implements TblUserInter {
 					// Khởi tạo đối tượng userInforEntities để lưu thông tin
 					UserInfor userInfor = new UserInfor();
 					// Lấy các giá trị và set các giá trị cho userinfor
-					userInfor.setUserId(rs.getInt("userid"));
+					userInfor.setUserId(rs.getString("userid"));
 					userInfor.setAge(rs.getInt("age"));
 					userInfor.setRoomId(rs.getInt("roomid"));
 					userInfor.setRule(rs.getInt("rule"));
 					userInfor.setFullname(rs.getString("fullname"));
 					userInfor.setRoom(rs.getString("roomname"));
-					userInfor.setDiseasename(rs.getString("diseasename"));
+					userInfor.setDiseaseName(rs.getString("diseasename"));
 					userInfor.setTel(rs.getString("tel"));
 					// Add user vào list
 					listUsers.add(userInfor);
@@ -282,7 +282,7 @@ public class TblUserImpl extends BaseImpl implements TblUserInter {
 				int index = 1;
 				ps.setString(index++, userInfor.getFullname());
 				ps.setInt(index++, userInfor.getAge());
-				ps.setString(index++, userInfor.getDiseasename());
+				ps.setString(index++, userInfor.getDiseaseName());
 				ps.setString(index++, userInfor.getTel());
 				ps.setInt(index++, userInfor.getRoomId());
 				ps.setInt(index++, userInfor.getRule());
