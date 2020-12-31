@@ -66,5 +66,19 @@
     <string name="label_room_user">Danh sách phòng bệnh</string>
     <string name="no_data">Không có dữ liệu</string>
     <string name="history_detail">Thông tin lịch sử đo</string>
+    <string name="home">Màn hình chính</string>
+    <string name="reset">Cập nhật dữ liệu</string>
+    <string name="about">Giới thiệu</string>
+    <string name="help">Trợ giúp</string>
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">Close</string>
+    <string name="author_name">Blood pressure manager</string>
+    <string name="label_email">bloodpressure@gmail.com</string>
+    <string name="export">Xuất dữ liệu</string>
+    <string name="my_message">Thông báo của tôi</string>
+    <string name="logout">Đăng xuất</string>
+    <string name="room_item">Phòng bệnh</string>
+    <string name="news_item">Bản tin</string>
+    <string name="analyst_item">Phân tích</string>
     <!-- TODO: Remove or change this placeholder text -->
 </resources>

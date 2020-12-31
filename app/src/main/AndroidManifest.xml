@@ -44,13 +44,15 @@
         <activity
             android:name=".controllers.DetailUserActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".controllers.MenuManagerActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".controllers.MenuManagerActivity" />
         <activity
             android:name=".controllers.MainActivity"
-            android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity
+            android:name=".controllers.MainActivity2"
+            android:label="@string/title_activity_main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

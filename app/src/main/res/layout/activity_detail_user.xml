@@ -5,7 +5,7 @@
     android:id="@+id/detailUserFrame"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#dff9fb"
+    android:background="@color/back_ground"
     android:orientation="vertical"
     tools:context=".controllers.DetailUserActivity">
 
@@ -32,8 +32,10 @@
             android:background="#55efc4"
             android:fontFamily="@font/roboto_regular"
             android:gravity="center"
+            android:rotationX="-4"
             android:text="@string/detail_infor_title"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:textStyle="italic" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -49,7 +51,8 @@
             android:background="#55efc4"
             android:fontFamily="@font/roboto_regular"
             android:padding="10dp"
-            android:text="@string/basic_detail" />
+            android:text="@string/basic_detail"
+            android:textStyle="italic" />
 
         <TextView
             android:layout_width="1dp"
@@ -72,7 +75,8 @@
             android:background="#55efc4"
             android:fontFamily="@font/roboto_regular"
             android:padding="10dp"
-            android:text="@string/history_result" />
+            android:text="@string/history_result"
+            android:textStyle="italic" />
 
     </RelativeLayout>
 
